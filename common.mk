@@ -77,7 +77,6 @@ PRODUCT_PACKAGES := \
     libstlport \
     libsync \
     lights.exynos4 \
-    macloader \
     Snap \
     tinymix
 
