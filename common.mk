@@ -79,7 +79,8 @@ PRODUCT_PACKAGES := \
     lights.exynos4 \
     macloader \
     Snap \
-    tinymix
+    tinymix \
+    helper
 
 # MFC API
 PRODUCT_PACKAGES += \
