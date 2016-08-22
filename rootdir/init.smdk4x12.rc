@@ -102,6 +102,10 @@ on post-fs-data
     restorecon /sys/class/rfkill/rfkill0/state
     restorecon /sys/class/rfkill/rfkill0/type
 
+# tdmb
+    chown system system /dev/tdmb
+    chmod 0660 /dev/tdmb
+
 # NFC
     setprop ro.nfc.port "I2C"
     chmod 0600 /dev/pn544
@@ -422,6 +426,11 @@ service charger /sbin/healthd -c
     class charger
     critical
     seclabel u:r:healthd:s0
+
+service dmb /system/bin/dmbserver
+    class main
+    user system
+    group radio inet misc audio camera graphics net_bt net_bt_admin sdcard_rw sdcard_r shell
 
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
